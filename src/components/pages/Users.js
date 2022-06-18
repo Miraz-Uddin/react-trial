@@ -3,11 +3,15 @@ import { UsersContext } from "../../components/context/Users.context";
 import User from "../User";
 export default function Users(props) {
   const context = React.useContext(UsersContext);
-  const { data } = context;
+  const { error, loading, users } = context;
   return (
     <>
-      {data &&
-        data.reverse().map((item, index) => <User key={item.id} {...item} />)}
+      {loading
+        ? "Loading .... "
+        : users.data
+            .reverse()
+            .map((item, index) => <User key={item.id} {...item} />)}
+      {error || null}
     </>
   );
 }
