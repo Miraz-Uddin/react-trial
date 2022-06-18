@@ -35,7 +35,7 @@ export const PostsProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, inititalState);
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_BACKEND_API_URI}/post`)
+      .get(`${process.env.REACT_APP_BACKEND_API_URI}/posts`)
       .then(({ data }) =>
         dispatch({ type: "GET_POSTS_SUCCESS", payload: data })
       )
