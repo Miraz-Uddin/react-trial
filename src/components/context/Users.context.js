@@ -10,7 +10,7 @@ export const UsersProvider = (props) => {
     axios
       .get(`${process.env.REACT_APP_BACKEND_API_URI}/users`)
       .then((data) => SetUsers(...users, data))
-      .catch((err) => console.log("error from fetch: " + err));
+      .catch((err) => console.log("error from users fetch: " + err));
   }, []);
   return (
     <UsersContext.Provider value={users}>

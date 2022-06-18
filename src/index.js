@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { AppContextProvider } from "./AppContextProvider";
 import App from "./components/App";
-import { UsersProvider } from "./components/context/Users.context";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <UsersProvider>
+    <AppContextProvider>
       <App />
-    </UsersProvider>
+    </AppContextProvider>
   </React.StrictMode>
 );
 
