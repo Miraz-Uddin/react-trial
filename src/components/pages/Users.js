@@ -3,10 +3,11 @@ import { UsersContext } from "../../components/context/Users.context";
 import User from "../User";
 export default function Users(props) {
   const context = React.useContext(UsersContext);
-  console.log(context);
+  const { data } = context;
   return (
     <>
-      <User />
+      {data &&
+        data.reverse().map((item, index) => <User key={item.id} {...item} />)}
     </>
   );
 }
